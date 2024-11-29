@@ -7,7 +7,7 @@ const packages = [
     {
         title: "Hockey",
         desc: "Hockey is a team sport played on ice, in which skaters use sticks to direct a puck into the opposing team's goal.",
-        image: "../assets/hockey-player.webp" // Replace with actual image URL
+        image: "../assets/hockey-player.png" // Replace with actual image URL
     },
     {
         title: "Baseball",

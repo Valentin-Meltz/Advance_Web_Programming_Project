@@ -123,3 +123,26 @@ header{
         transform: scaleX(1); /* Échelle à 1 lors du survol */
     }
 }
+
+.main-content{
+    height: 100%;
+    margin-top: 100px;
+    background-color: #f4e7d3;
+}
+
+.card{
+    border: none;
+    width: 50%;
+    background-color: #f4e7d3;
+    text-align: justify;
+}
+
+.img-fluid{
+    height: 70vh;
+    max-width: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}   

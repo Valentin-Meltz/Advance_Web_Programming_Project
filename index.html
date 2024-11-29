@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,39 +21,95 @@
 
     <title>Valentin Meltz</title>
 </head>
+
 <body>
-    <header>
-        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-ligth">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    
-                    <a class="navbar-brand m-0" href="#">Amazing Canada</a>
+    <div class="wrapper">
+        <header>
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-ligth">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center">
+                        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <a class="navbar-brand m-0" href="#">Amazing Canada</a>
+                    </div>
+    
+                    <div class="collapse navbar-collapse justify-content-center order-lg-2" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">City</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects">Monument</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Sport</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="app" class="main-content d-flex align-items-center">
+            <div class="container">
+                <h1 v-text="mainHeading" class="text-center"></h1>
+
+                <div id="article" class="container d-md-flex py-3 align-items-center justify-content-center">
+                    <section @:click="isFlipped = !isFlipped" class="card">
+                        <h2 v-text="isFlipped ? '' : packages[index].title"></h2>
+                        <p v-text="isFlipped ? '' : packages[index].desc"></p>
+                    </section>
+                    <img class="img-fluid" v-if="!isFlipped" v-bind:src="packages[index].image" alt="Package Image" />
                 </div>
 
-                <div class="collapse navbar-collapse justify-content-center order-lg-2" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">City</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Monument</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Sport</a>
-                        </li>
-                    </ul>
+                <div class="buttons">
+                    <button @click="move(-1)" type="button">Previous</button>
+                    <button @click="move(1)" type="button">Next</button>
                 </div>
             </div>
-        </nav>
-    </header>
+        </main>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>        
+
+    <!-- Calling the Vue Framework first: -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Calling our data file: -->
+    <script src="./data/main.js"></script>
+
+    <!-- Calling our JS script file/ or Internal JS code: -->
+    <script src="../js/script.js">
+    </script>
+
+    <script>
+        const javaPackagesApp = {
+            data() {
+                return {
+                    mainHeading: 'Discover Canada',
+                    packages,
+                    isFlipped: false,
+                    learnMoreUrl: 'https://docs.oracle.com/javase/tutorial/',
+                    userInput: 'Default',
+                    index: 0
+                }
+            },
+            methods: {
+                move(change) {
+                    if (this.packages[this.index + change]) {
+                        this.index += change;
+                        this.isFlipped = false;
+                    }
+                }
+            }
+        }
+
+        const app = Vue.createApp(javaPackagesApp).mount("#app");
+    </script>
 </body>
 </html>

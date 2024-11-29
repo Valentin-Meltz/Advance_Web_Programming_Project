@@ -1,7 +1,6 @@
-// app.js
-const app = new Vue({
-    el: '#app',
+new Vue({
+    el: 'sport',
     data: {
-        items: items // Use the items array from data.js
+        item: items[3]
     }
 });

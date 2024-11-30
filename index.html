@@ -41,13 +41,7 @@
                                 <a class="nav-link" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">City</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#projects">Monument</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Sport</a>
+                                <a class="nav-link" href="#app">Sport</a>
                             </li>
                         </ul>
                     </div>
@@ -55,10 +49,21 @@
             </nav>
         </header>
 
+        <!-- Home (text on the left and image on the right) -->
+        <section id="home" class="text-dark">
+            <div class="container d-md-flex py-3 align-items-center">
+                <article class="text-center text-md-start">
+                    <h1>Explore Canada's sport</h1>
+                    <p class="lead">
+                        Sport plays a significant role in Canadian culture, reflecting the country's diverse heritage and regional identities. From the icy rinks of hockey arenas to the expansive fields of lacrosse, Canada's sporting landscape is rich and varied.
+                    </p>
+                </article>
+                <img class="img-fluid" id="image-introduction" src="./assets/canada-flag.png" alt="Banniere-introcution">
+            </div> 
+        </section>
+
         <main id="app" class="main-content d-flex align-items-center">
             <div class="container">
-                <h1 v-text="mainHeading" class="text-center"></h1>
-
                 <div id="article" class="container d-md-flex py-3 align-items-center justify-content-center">
                     <section @:click="isFlipped = !isFlipped" class="card">
                         <h2 v-text="isFlipped ? '' : packages[index].title"></h2>
@@ -68,11 +73,19 @@
                 </div>
 
                 <div class="buttons">
-                    <button @click="move(-1)" type="button">Previous</button>
-                    <button @click="move(1)" type="button">Next</button>
+                    <button @click="move(-1)" type="button" class="button">
+                        <p class="text">Previous</p>
+                    </button>
+                    <button @click="move(1)" type="button" class="button">
+                        <p class="text">Next</p>
+                    </button>
                 </div>
             </div>
         </main>
+
+        <footer>
+            <p>ILAC & EFREI - HTML, CSS, and JavaScript Project Assignment - Groupe 1</p>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>        

@@ -9,6 +9,10 @@ html {
     background-color: #f4e7d3;
 }
 
+body{
+    background-color: #f4e7d3;
+}
+
 /* Header and navigation bar*/
 header{
     position: absolute;
@@ -125,9 +129,16 @@ header{
 }
 
 .main-content{
-    height: 100%;
-    margin-top: 100px;
+    height: 100vh;
     background-color: #f4e7d3;
+    width: 100%;
+}
+
+#home{
+    background-color: #f4e7d3;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .card{
@@ -145,4 +156,79 @@ header{
 .buttons{
     display: flex;
     justify-content: space-evenly;
-}   
+}  
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+    align-items: center;
+}
+  
+.button .text {
+color: white;
+font-weight: 700;
+font-size: 1em;
+transition: 400ms;
+}
+
+.button svg path {
+transition: 400ms;
+}
+
+.button:hover {
+background-color: transparent;
+}
+
+.button:hover .text {
+color: #181717;
+}
+
+.button:hover svg path {
+fill: #181717;
+}
+
+footer{
+    text-align: center;
+    background-color: #f4e7d3;
+}
+
+@media (max-width: 767.98px) {
+    #article .card {
+        text-align: center;
+    }
+
+    .img-fluid{
+        margin: 0 auto;
+    }
+
+    #image-introduction {
+        max-width: 80%;
+        display: flex;
+        justify-content: center ;
+        height: auto;
+    }
+
+    #article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main{
+        margin-bottom: 50px;
+    }
+
+    #home{
+        margin-top: 50px;
+    }
+}

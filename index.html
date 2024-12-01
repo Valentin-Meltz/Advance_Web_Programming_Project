@@ -97,32 +97,6 @@
     <script src="./data/main.js"></script>
 
     <!-- Calling our JS script file/ or Internal JS code: -->
-    <script src="../js/script.js">
-    </script>
-
-    <script>
-        const javaPackagesApp = {
-            data() {
-                return {
-                    mainHeading: 'Discover Canada',
-                    packages,
-                    isFlipped: false,
-                    learnMoreUrl: 'https://docs.oracle.com/javase/tutorial/',
-                    userInput: 'Default',
-                    index: 0
-                }
-            },
-            methods: {
-                move(change) {
-                    if (this.packages[this.index + change]) {
-                        this.index += change;
-                        this.isFlipped = false;
-                    }
-                }
-            }
-        }
-
-        const app = Vue.createApp(javaPackagesApp).mount("#app");
-    </script>
+    <script src="./data/app.js"></script>
 </body>
 </html>
